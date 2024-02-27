@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "Qisqa video cheklash",
+  "version": "1.0",
+  "description": "Asosiy oynadan qisqa videolarni cheklash uchun foydalaning va sahifani yangilang",
+  "permissions": ["webNavigation", "tabs"],
+  "host_permissions": ["*://*.youtube.com/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://www.youtube.com/*"],
+      "js": ["content.js"]
+    }
+  ],
+
+  "action": {
+    "default_popup": "index.html"
+  }
+}
